@@ -7,13 +7,15 @@ void* calculo_aritmetico(void* pid){
     //casteamos el parametro de tipo void* al tipo original que nos pasaron, en este caso fue un long (entero de 8 bytes)
     long id = (long) pid;
 
-    //el thread imprime lo que le pasaron de parametro
-    printf("Thread: hola, mi proceso principal tiene pid %ld \n", id);
+    
   
     int contador=0;
     while (contador < 2147483647){
         contador=contador+1;
     }
+
+    //el thread imprime lo que le pasaron de parametro
+    printf("Thread: fin de ejecucion del thread %ld \n", id);
 
     pthread_exit(NULL);//necesario para terminar el thread
 
@@ -42,20 +44,15 @@ void create_threads(){
 
 
 int main(){
-    // to store the execution time of code
-    double time_spent = 0.0;
  
-    clock_t begin = clock();
+    time_t begin = time(NULL);
 
     create_threads();
 
-    clock_t end = clock();
+    time_t end = time(NULL);
  
-    // calculate elapsed time by finding difference (end - begin) and
-    // dividing the difference by CLOCKS_PER_SEC to convert to seconds
-    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
- 
-    printf("The elapsed time is %f seconds", time_spent);
+    /// calculate elapsed time by finding difference (end - begin)
+    printf("The elapsed time is %d seconds", (end - begin));
 
     return 0;
 }

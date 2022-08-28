@@ -15,6 +15,12 @@ pwd
 
 mkdir $1
 
-ls -o>$1/lista.txt
+ls -o>$1/contenido_home.txt
+
+cat $1/contenido_home.txt
+
+# input="USER INPUT"
+read -p "Press enter to finish: " input
+
 fi
 

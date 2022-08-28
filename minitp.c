@@ -8,17 +8,22 @@ void calculo(){
     while (contador < 2147483647){
         contador=contador+1;
     }
-
-    printf("\nenter value:");
-    int c = getchar();
-
-    printf( "\nYou entered: ");
-    putchar( c );
+    
 }
 
-void main(){
+int main(){
     printf("inicio calculo");
     calculo();
+    calculo();
+    calculo();
+    calculo();
+
+    printf("\n Press enter to continue:");
+    int c = getchar();
+
+
     printf("\nfin calculo");
+
+    return 0;
 
 }
